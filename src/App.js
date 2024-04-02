@@ -4,6 +4,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <TodoItem element={1} maxElements={3}/>
+      <TodoItem element={2} maxElements={3}/>
+      <TodoItem element={3} maxElements={3}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,6 +22,16 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+function TodoItem(props){
+  return (
+    <li>
+      <span>V</span>
+      <p>Element {props.element} de {props.maxElements}</p>
+      <span>X</span>
+    </li>
   );
 }
 
