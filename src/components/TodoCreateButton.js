@@ -1,7 +1,7 @@
-function TodoCreateButton(props) {
+function TodoCreateButton({type, action}) {
   return (
     <div>
-        <button name={props.type + '-button'} onClick={props.action}>{props.type}</button>
+        <button name={type + '-button'} onClick={action}>{type}</button>
     </div>
   );
 }

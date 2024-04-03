@@ -1,8 +1,8 @@
-function TodoItem(rops) {
+function TodoItem({description}) {
   return (
     <li>
       <span>V</span>
-      <p> Buscar Notas Cursos Html, Css</p>
+      <p>{description}</p>
       <span>X</span>
     </li>
   );
