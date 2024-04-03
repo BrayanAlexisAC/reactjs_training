@@ -1,7 +1,5 @@
 function TodoSearch() {
-  return (
-    <input type="text" placeholder="Estudiar Reactjs"/>
-  );
+  return <input type="text" placeholder="Estudiar Reactjs" />;
 }
 
-export {TodoSearch}
+export { TodoSearch };
