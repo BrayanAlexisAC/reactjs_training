@@ -1,4 +1,4 @@
-import "../App.css";
+import "../assets/styles/App.css";
 import React from "react";
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
@@ -14,8 +14,10 @@ const defaultElements = [
   { text: "Relizar Decalacion anual", completed: true },
 ];
 
-function App() {
-  return (
+function TodoContainer() {
+  return React.createElement(
+    'div',
+    {className : 'todoContainer'},
     <React.Fragment>
       <TodoCounter finishNumber={9} totalTodoThings={20} />
       <TodoSearch />
@@ -29,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export {TodoContainer};
