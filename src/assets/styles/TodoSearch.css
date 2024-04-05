@@ -7,3 +7,7 @@
   text-align: center;
   margin-bottom: 36px;
 }
+
+.todoSearch:focus{
+  outline-color: #60DAFA;
+}
