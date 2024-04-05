@@ -1,10 +1,10 @@
+import '../assets/styles/TodoCreateButton.css'
+
 function TodoCreateButton({ type, action }) {
   return (
-    <div>
-      <button name={type + "-button"} onClick={action}>
-        {type}
-      </button>
-    </div>
+    <button className='create-button' onClick={action}>
+      {type}
+    </button>
   );
 }
 

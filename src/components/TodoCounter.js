@@ -1,7 +1,9 @@
+import '../assets/styles/TodoCounter.css'
+
 function TodoCounter(props) {
   return (
-    <h1>
-      Haz completado {props.finishNumber} de {props.totalTodoThings} Actividades
+    <h1 className="todoCounter">
+      Has completado <br/> <b>{props.finishNumber}</b> de <b>{props.totalTodoThings}</b> TODOs
     </h1>
   );
 }

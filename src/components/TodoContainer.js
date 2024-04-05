@@ -1,4 +1,4 @@
-import "../assets/styles/App.css";
+import "../assets/styles/TodoContainer.css";
 import React from "react";
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
@@ -26,7 +26,7 @@ function TodoContainer() {
           <TodoItem key={object.text} todo={object} />
         ))}
       </TodoList>
-      <TodoCreateButton type={"Create"} />
+      <TodoCreateButton type={"+"} />
     </React.Fragment>
   );
 }

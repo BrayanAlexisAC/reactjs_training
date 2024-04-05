@@ -1,12 +1,14 @@
+import '../assets/styles/TodoItem.css'
+
 function TodoItem({ todo }) {
   console.log(todo)
   return (
-    <li>
-      <span>V</span>
-      <p>
-        {todo.text} completed: {todo.completed.toString()}
+    <li className="todoItem">
+      <span className={'icon-verification ' + (todo.completed ? 'complete-color' : '') }>V</span>
+      <p className={todo.completed ? 'complete-mark' : ''}>
+        {todo.text}
       </p>
-      <span>X</span>
+      <span className='icon-cancel'> X </span>
     </li>
   );
 }

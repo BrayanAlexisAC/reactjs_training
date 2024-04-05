@@ -1,5 +1,7 @@
+import '../assets/styles/TodoSearch.css'
+
 function TodoSearch() {
-  return <input type="text" placeholder="Estudiar Reactjs" />;
+  return (<input className="todoSearch" type="text" placeholder="Estudiar Reactjs" />);
 }
 
 export { TodoSearch };

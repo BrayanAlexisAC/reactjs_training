@@ -1,0 +1,39 @@
+.todoItem {
+  display: flex;
+  background-color: white;
+  width: 84%;
+  height: 80px;
+  padding-left: 10px;
+  justify-content: space-between;
+}
+
+.icon-verification {
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #7c7c7c;
+  width: 32px;
+}
+
+.complete-color{
+  color: aqua;
+}
+
+.complete-mark {
+  text-decoration: line-through;
+}
+
+.icon-cancel{
+  cursor: pointer;
+  position: relative;
+  top: -16px;
+  font-weight: bolder;
+  color: #7c7c7c;
+  font-size: 28px;
+}
+
+.icon-cancel:hover{
+  color: red;
+}
