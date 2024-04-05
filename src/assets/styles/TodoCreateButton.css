@@ -13,4 +13,10 @@
   height: 50px;
   width: 50px;
   padding: 0px;
+  
+  transition: .3s ease;
+}
+
+.create-button:hover{
+  transform: rotate(224deg);
 }
