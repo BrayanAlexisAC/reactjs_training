@@ -5,6 +5,7 @@
   height: 80px;
   padding-left: 10px;
   justify-content: space-between;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
 }
 
 .icon-verification {
