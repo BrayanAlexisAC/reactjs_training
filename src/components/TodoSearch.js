@@ -11,7 +11,7 @@ function TodoSearch() {
     {
       className:'todoSearch', 
       type:'text', 
-      placeholder:'Estuduiar ReactJs', 
+      placeholder:'Estudiar ReactJs', 
       value:searchValue,
       onChange:(event) => {
         setSearchValue(event.target.value)
