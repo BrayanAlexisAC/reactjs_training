@@ -1,8 +1,8 @@
 import '../assets/styles/TodoCreateButton.css'
 
-function TodoCreateButton({ type, action }) {
+function TodoCreateButton({ type , action}) {
   return (
-    <button className='create-button' onClick={action}>
+    <button className='create-button' onClick={ action } >
       {type}
     </button>
   );

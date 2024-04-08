@@ -26,7 +26,7 @@ function TodoContainer() {
           <TodoItem key={object.text} todo={object} />
         ))}
       </TodoList>
-      <TodoCreateButton type={"+"} />
+      <TodoCreateButton type={"+"} action={() => alert('Creando...')} />
     </React.Fragment>
   );
 }
