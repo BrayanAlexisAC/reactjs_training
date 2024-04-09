@@ -15,9 +15,14 @@ const defaultElements = [
 ];
 
 function TodoContainer() {
-  let [todoElements, setTodoElements] = React.useState(defaultElements)
-  let [searchValue, setSearchValue] = React.useState('')
-  let todoCompleted = todoElements.filter(todo => todo.completed).length
+  const [todoElements, setTodoElements] = React.useState(defaultElements)
+  const [searchValue, setSearchValue] = React.useState('')
+  const todoCompleted = todoElements.filter(todo => todo.completed).length
+  const filterTodos = todoElements.filter((element) => {
+    let todoDescription = element.text.toLowerCase()
+    let searchText = searchValue.toLowerCase()
+    return todoDescription.includes(searchText)
+  })
   
   return React.createElement(
     'div',
@@ -26,13 +31,19 @@ function TodoContainer() {
       <TodoCounter finishNumber={todoCompleted} totalTodoThings={todoElements.length} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
       <TodoList>
-        {todoElements.map((object) => (
-          <TodoItem key={object.text} todo={object} />
-        ))}
+        { 
+          filterTodos.map((
+              (todo) => <TodoItem key={todo.text} todo={todo} />
+            ))
+        }
       </TodoList>
       <TodoCreateButton type={"+"} action={() => alert('Creando...')} />
     </React.Fragment>
   );
+}
+
+function listTodos(todoElements, filterElements){
+  return filterElements.length > 0 ? filterElements : todoElements
 }
 
 export {TodoContainer};
