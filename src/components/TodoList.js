@@ -1,7 +1,12 @@
+import React from 'react';
 import '../assets/styles/TodoList.css'
 
 function TodoList(props) {
-  return (<ul className='todoList' >{props.children}</ul>);
+  return React.createElement(
+  'ul',
+  {className:"todoList"},
+  props.children
+);
 }
 
 export { TodoList };

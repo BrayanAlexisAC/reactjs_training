@@ -1,17 +1,13 @@
-import React, { createElement } from "react";
+import React from "react";
 import "../assets/styles/TodoSearch.css";
 
-function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState('');
-  
-  console.log('value: ',searchValue);
-
-  return createElement(
+function TodoSearch({ searchValue, setSearchValue }) {
+  return React.createElement(
     'input',
     {
       className:'todoSearch', 
       type:'text', 
-      placeholder:'Estudiar ReactJs', 
+      placeholder:'Estuduiar ReactJs', 
       value:searchValue,
       onChange:(event) => {
         setSearchValue(event.target.value)

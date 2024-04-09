@@ -15,14 +15,18 @@ const defaultElements = [
 ];
 
 function TodoContainer() {
+  let [todoElements, setTodoElements] = React.useState(defaultElements)
+  let [searchValue, setSearchValue] = React.useState('')
+  let todoCompleted = todoElements.filter(todo => todo.completed).length
+  
   return React.createElement(
     'div',
     {className : 'todoContainer'},
     <React.Fragment>
-      <TodoCounter finishNumber={9} totalTodoThings={20} />
-      <TodoSearch />
+      <TodoCounter finishNumber={todoCompleted} totalTodoThings={todoElements.length} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
       <TodoList>
-        {defaultElements.map((object) => (
+        {todoElements.map((object) => (
           <TodoItem key={object.text} todo={object} />
         ))}
       </TodoList>
