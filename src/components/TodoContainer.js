@@ -42,8 +42,4 @@ function TodoContainer() {
   );
 }
 
-function listTodos(todoElements, filterElements){
-  return filterElements.length > 0 ? filterElements : todoElements
-}
-
 export {TodoContainer};
