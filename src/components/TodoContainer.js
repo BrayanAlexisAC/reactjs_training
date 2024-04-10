@@ -35,10 +35,8 @@ function TodoContainer() {
     newTodos[index].completed ? newTodos[index].completed = false : newTodos[index].completed = true
     setTodoElements(newTodos)
     let todosPending = newTodos.filter((todo) => todo.completed === false)
-    console.log(todosPending)
     if (todosPending.length <= 0) {
       let myModal = new Modal(document.getElementById("modalMessage"), {});
-      console.info(myModal)
       myModal.show()
     }
 

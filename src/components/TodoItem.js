@@ -1,15 +1,15 @@
 import '../assets/styles/TodoItem.css'
+import { VerificationIcon } from './icons/VerificationIcon';
+import { CancelIcon } from './icons/CancelIcon';
 
 function TodoItem(props) {
   return (
     <li className="todoItem">
-      <span className={'icon-verification ' + (props.todo.completed ? 'complete-color' : '')} onClick={props.onComplete}>
-        V
-      </span>
+      <VerificationIcon onComplete={props.onComplete}/>
       <p className={'todoItem-text ' + (props.todo.completed ? 'complete-mark' : '')}>
         {props.todo.text}
       </p>
-      <span className='icon-cancel' onClick={props.onDelete}> X </span>
+      <CancelIcon onDelete={props.onDelete}/>
     </li>
   );
 }
