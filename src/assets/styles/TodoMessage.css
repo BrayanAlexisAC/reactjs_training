@@ -1,0 +1,7 @@
+.modal-content-success,
+.modal-msg-congrats {
+  color: #0a3622;
+  background-color: #a3cfbb;
+  border-color: #0a3622;
+  border-radius: 14px;
+}

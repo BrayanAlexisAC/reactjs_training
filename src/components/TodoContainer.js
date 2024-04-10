@@ -5,6 +5,8 @@ import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { TodoCreateButton } from "./TodoCreateButton";
+import { TodoMessage } from "./TodoMessage";
+import { Modal } from "bootstrap";
 
 const defaultElements = [
   { text: "Buscar Notas Cursos Html, Css", completed: false },
@@ -32,6 +34,14 @@ function TodoContainer() {
     let index = newTodos.findIndex((element) => element.text === key)
     newTodos[index].completed ? newTodos[index].completed = false : newTodos[index].completed = true
     setTodoElements(newTodos)
+    let todosPending = newTodos.filter((todo) => todo.completed === false)
+    console.log(todosPending)
+    if (todosPending.length <= 0) {
+      let myModal = new Modal(document.getElementById("modalMessage"), {});
+      console.info(myModal)
+      myModal.show()
+    }
+
   }
 
   const todoDelete = (key) => {
@@ -45,6 +55,7 @@ function TodoContainer() {
     'div',
     {className : 'todoContainer'},
     <React.Fragment>
+      <TodoMessage/>
       <TodoCounter 
         finishNumber={todoCompleted} 
         totalTodoThings={todoElements.length} 
