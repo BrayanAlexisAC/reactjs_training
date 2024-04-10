@@ -8,6 +8,11 @@
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
 }
 
+.todoItem-text {
+  margin: 0px;
+  align-self: center;
+}
+
 .icon-verification {
   cursor: pointer;
   position: relative;
@@ -29,7 +34,7 @@
 .icon-cancel{
   cursor: pointer;
   position: relative;
-  top: -16px;
+  top: -22px;
   font-weight: bolder;
   color: #7c7c7c;
   font-size: 28px;

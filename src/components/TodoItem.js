@@ -6,7 +6,7 @@ function TodoItem(props) {
       <span className={'icon-verification ' + (props.todo.completed ? 'complete-color' : '')} onClick={props.onComplete}>
         V
       </span>
-      <p className={props.todo.completed ? 'complete-mark' : ''}>
+      <p className={'todoItem-text ' + (props.todo.completed ? 'complete-mark' : '')}>
         {props.todo.text}
       </p>
       <span className='icon-cancel' onClick={props.onDelete}> X </span>
