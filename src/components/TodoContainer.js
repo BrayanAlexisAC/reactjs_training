@@ -8,20 +8,19 @@ import { TodoCreateButton } from "./TodoCreateButton";
 import { TodoMessage } from "./TodoMessage";
 import { Modal } from "bootstrap";
 
-const defaultElements = [
-  { text: "Buscar Notas Cursos Html, Css", completed: false },
-  { text: "Iniciar curso introduccion Reactjs", completed: true },
-  { text: "Iniciar curso Sprgin JPA", completed: true },
-  { text: "Completar Path Amazon Web Services", completed: false },
-  { text: "Relizar Decalacion anual", completed: true },
-];
+const LOCALSTORAGE_TODOs = 'TODOs_v1'
 
 function TodoContainer() {
-  const [todoElements, setTodoElements] = React.useState(defaultElements)
-
+  const localStorageTodos = localStorage.getItem(LOCALSTORAGE_TODOs)
+  const parseTodos = localStorageTodos ? JSON.parse(localStorageTodos) : []
+  const [todoElements, setTodoElements] = React.useState(parseTodos)
   const [searchValue, setSearchValue] = React.useState('')
-
   const todoCompleted = todoElements.filter(todo => todo.completed).length
+
+  const updateTodoElements = (todoElements) => {
+    setTodoElements(todoElements)
+    localStorage.setItem(LOCALSTORAGE_TODOs, JSON.stringify(todoElements))
+  }
 
   const filterTodos = todoElements.filter((element) => {
     let todoDescription = element.text.toLowerCase()
@@ -33,20 +32,23 @@ function TodoContainer() {
     let newTodos = [...todoElements]
     let index = newTodos.findIndex((element) => element.text === key)
     newTodos[index].completed ? newTodos[index].completed = false : newTodos[index].completed = true
-    setTodoElements(newTodos)
-    let todosPending = newTodos.filter((todo) => todo.completed === false)
+    updateTodoElements(newTodos)
+    validatePendingTodos(newTodos)
+  }
+
+  const validatePendingTodos = (todoElements) => {
+    let todosPending = todoElements.filter((todo) => todo.completed === false)
     if (todosPending.length <= 0) {
       let myModal = new Modal(document.getElementById("modalMessage"), {});
       myModal.show()
     }
-
   }
 
   const todoDelete = (key) => {
     let newTodos = [...todoElements]
     let index = newTodos.findIndex((element) => element.text === key)
     newTodos.splice(index, 1) // delete elements from parameter 1 to prameter 2
-    setTodoElements(newTodos)
+    updateTodoElements(newTodos)
   }
 
   return React.createElement(
