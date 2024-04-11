@@ -1,0 +1,15 @@
+.icon-verification {
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+  width: 24px;
+}
+
+.icon-verification 
+.icon-check:hover {
+  fill: #4caf50;
+}
+
+.complete-mark {
+  text-decoration: line-through;
+}

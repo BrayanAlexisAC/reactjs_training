@@ -3,18 +3,18 @@ import {ReactComponent as CheckSVG} from '../../assets/images/check.svg'
 import { IoClose } from "react-icons/io5";
 
 const defaultIcons = {
-  "verification": <CheckSVG/>,
-  "cancel": <IoClose/>
+  "verification": (color) => <CheckSVG className='icon-check' fill={color} />,
+  "cancel": (color) => <IoClose className='icon-close' fill={color}/>
 }
 
-function TodoIcons({type, completed, action}) {
+function TodoIcons({type, color, action}) {
   return React.createElement(
     'span',
     {
       className:`icon-${type}`, 
       onClick:action
     },
-    defaultIcons[type]
+    defaultIcons[type](color)
   )
 }
 

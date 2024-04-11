@@ -1,0 +1,13 @@
+
+.icon-cancel{
+  cursor: pointer;
+  position: relative;
+  top: -28px;
+  font-size: 32px;
+  width: 24px;
+}
+
+.icon-cancel
+.icon-close:hover{
+  fill: red;
+}
