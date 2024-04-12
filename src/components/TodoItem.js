@@ -1,17 +1,24 @@
+import React from 'react';
 import { VerificationIcon } from './icons/VerificationIcon';
 import { CancelIcon } from './icons/CancelIcon';
+import { TodoContext } from '../contexts/TodoContext';
+
 import '../assets/styles/TodoItem.css'
 import '../assets/styles/icons/VerificationIcon.css'
 import '../assets/styles/icons/CancelIcon.css'
 
-function TodoItem(props) {
+function TodoItem({todo}) {
+  const {
+    selectVerification,
+    todoDelete
+  } = React.useContext(TodoContext)
   return (
     <li className="todoItem">
-      <VerificationIcon completed={props.todo.completed} onComplete={props.onComplete}/>
-      <p className={'todoItem-text ' + (props.todo.completed ? 'complete-mark' : '')}>
-        {props.todo.text}
+      <VerificationIcon completed={todo.completed} onComplete={() => selectVerification(todo.text)}/>
+      <p className={'todoItem-text ' + (todo.completed ? 'complete-mark' : '')}>
+        {todo.text}
       </p>
-      <CancelIcon onDelete={props.onDelete}/>
+      <CancelIcon onDelete={() => todoDelete(todo.text)}/>
     </li>
   );
 }
