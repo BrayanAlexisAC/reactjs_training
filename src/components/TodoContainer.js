@@ -6,16 +6,19 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { TodoCreateButton } from "./TodoCreateButton";
 import { TodoMessage } from "./TodoMessage";
+import { LoadingIcon } from "./icons/LoadingIcon";
 
 function TodoContainer({
   todoCompleted,
   todoElements,
+  localStorageStatus,
   searchValue,
   setSearchValue,
   filterTodos,
   selectVerification,
   todoDelete
 }) {
+  console.log(localStorageStatus)
   return React.createElement(
     'div',
     {className : 'todoContainer'},
@@ -30,6 +33,9 @@ function TodoContainer({
         setSearchValue={setSearchValue}
       />
       <TodoList>
+        {localStorageStatus.isLoading && <LoadingIcon/>}
+        {/* show error message like a notification  */}
+        {localStorageStatus.hasError && 'Ocurrio un error mientras cargaban los datos'}
         { 
           filterTodos.map(((todo) => 
               <TodoItem 

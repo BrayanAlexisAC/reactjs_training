@@ -6,21 +6,21 @@ import { TodoContainer } from '../../components/TodoContainer'
 const LOCALSTORAGE_TODOs = 'TODOs_v1'
 
 function App() {
-  const [todoElements, updateItem] = useLocalStorage(LOCALSTORAGE_TODOs, [], true)
+  const data = useLocalStorage(LOCALSTORAGE_TODOs, [], true)
   const [searchValue, setSearchValue] = React.useState('')
-  const todoCompleted = todoElements.filter(todo => todo.completed).length
-
-  const filterTodos = todoElements.filter((element) => {
+  const todoCompleted = data.item.filter(todo => todo.completed).length
+  
+  const filterTodos = data.item.filter((element) => {
     let todoDescription = element.text.toLowerCase()
     let searchText = searchValue.toLowerCase()
     return todoDescription.includes(searchText)
   })
 
   const selectVerification = (key) => {
-    let newTodos = [...todoElements]
+    let newTodos = [...data.item]
     let index = newTodos.findIndex((element) => element.text === key)
     newTodos[index].completed ? newTodos[index].completed = false : newTodos[index].completed = true
-    updateItem(newTodos)
+    data.updateItem(newTodos)
     validatePendingTodos(newTodos)
   }
 
@@ -33,16 +33,20 @@ function App() {
   }
 
   const todoDelete = (key) => {
-    let newTodos = [...todoElements]
+    let newTodos = [...data.item]
     let index = newTodos.findIndex((element) => element.text === key)
     newTodos.splice(index, 1) // delete elements from parameter 1 to prameter 2
-    updateItem(newTodos)
+    data.updateItem(newTodos)
   }
 
   return (
     <TodoContainer
       todoCompleted={todoCompleted}
-      todoElements={todoElements}
+      todoElements={data.item}
+      localStorageStatus={{
+        isLoading: data.isLoading,
+        haserror: data.hasError
+      }}
       searchValue={searchValue}
       setSearchValue={setSearchValue}
       filterTodos={filterTodos}
