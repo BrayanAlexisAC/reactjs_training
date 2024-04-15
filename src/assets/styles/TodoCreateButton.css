@@ -16,10 +16,11 @@
   height: 50px;
   width: 50px;
   padding: 0px;
+  z-index: 1051;
   
   transition: 0.3s;
 }
 
-.create-button:hover{
+.create-button-active{
   transform: rotate(224deg);
 }

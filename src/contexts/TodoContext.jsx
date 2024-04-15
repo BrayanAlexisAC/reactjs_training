@@ -8,8 +8,9 @@ const TodoContext = React.createContext()
 const LOCALSTORAGE_TODOs = 'TODOs_v1'
 
 function TodoProvider({children}) {
-  const data = useLocalStorage(LOCALSTORAGE_TODOs, [], true)
   const [searchValue, setSearchValue] = React.useState('')
+  const [openTodoModal, setOpenTodoModal] = React.useState(false);
+  const data = useLocalStorage(LOCALSTORAGE_TODOs, [], true)
   const todoCompleted = data.item.filter(todo => todo.completed).length
   
   const filterTodos = data.item.filter((element) => {
@@ -40,6 +41,10 @@ function TodoProvider({children}) {
     newTodos.splice(index, 1) // delete elements from parameter 1 to prameter 2
     data.updateItem(newTodos)
   }
+
+  const addTodos = () => {
+    setOpenTodoModal(!openTodoModal)
+  }
   
   return (
     <TodoContext.Provider value={{
@@ -53,7 +58,12 @@ function TodoProvider({children}) {
       setSearchValue,
       filterTodos,
       selectVerification,
-      todoDelete
+      todoDelete,
+      todoModal: {
+        open: openTodoModal,
+        setOpen: setOpenTodoModal
+      },
+      addTodos
     }}>
       {children}
     </TodoContext.Provider>

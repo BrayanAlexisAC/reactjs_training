@@ -7,7 +7,7 @@ import './assets/styles/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('app-machine-todo-root'));
 root.render(
   <React.StrictMode>
     <App />
