@@ -24,10 +24,6 @@
   line-height: 25px;
 }
 
-.todoAddDescriptionModal::placeholder{
-  /* I need to add styles for placeholder, at this moment text is center but not seeing very well */
-}
-
 .todoAddButtonsModal {
   text-align: center;
 }
