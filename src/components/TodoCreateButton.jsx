@@ -5,13 +5,13 @@ import { TodoContext } from '../contexts/TodoContext';
 function TodoCreateButton({ type }) {
   const {
     todoModal,
-    addTodos
+    cahngeStateTodoModal
   } = React.useContext(TodoContext)
   return React.createElement(
     'button',
     {
-      className: `create-button ${todoModal.open && `create-button-active`}`,
-      onClick: addTodos
+      className: 'create-button ' + (todoModal.open && 'create-button-active'),
+      onClick: cahngeStateTodoModal
     },
     type
   )

@@ -42,7 +42,17 @@ function TodoProvider({children}) {
     data.updateItem(newTodos)
   }
 
-  const addTodos = () => {
+  const addTodos = (description) => {
+    let newTodos = [...data.item]
+    newTodos.push({
+      text: description,
+      completed: false
+    })
+    data.updateItem(newTodos)
+    setOpenTodoModal(!openTodoModal)
+  }
+
+  const cahngeStateTodoModal = () => {
     setOpenTodoModal(!openTodoModal)
   }
   
@@ -63,6 +73,7 @@ function TodoProvider({children}) {
         open: openTodoModal,
         setOpen: setOpenTodoModal
       },
+      cahngeStateTodoModal,
       addTodos
     }}>
       {children}
