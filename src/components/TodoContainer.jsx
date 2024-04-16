@@ -21,7 +21,6 @@ function TodoContainer() {
     'div',
     {className : 'todoContainer'},
     <React.Fragment>
-      {/* Modals */}
       <TodoMessage />
       <TodoCounter />
       <TodoSearch />
