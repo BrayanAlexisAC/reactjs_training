@@ -9,7 +9,7 @@ import { TodoMessage } from "./TodoMessage";
 import { LoadingIcon } from "./icons/LoadingIcon";
 import { TodoContext } from "../contexts/TodoContext";
 import { TodoModal } from "./common/TodoModal";
-import TodoAddModal from "./TodoAddModal";
+import { TodoAddModal } from "./TodoAddModal";
 
 function TodoContainer() {
   const {

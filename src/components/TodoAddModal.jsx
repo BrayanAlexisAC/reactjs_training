@@ -1,4 +1,5 @@
 import React from 'react'
+import { TodoButton } from './common/TodoButton'
 
 import '../assets/styles/TodoAddModal.css'
 
@@ -15,10 +16,18 @@ function TodoAddModal() {
      {
       className: 'todoAddButtonsModal'
      },
-     <button className='button-cancel' onClick={() => alert('cancelar...')}>Cancelar</button>, // Add Component to buttons
-     <button className='button-add' onClick={() => alert('Agregar...')} >Agregar</button>
+    <TodoButton 
+      type={'Cancelar'} 
+      label={'Cancelar'}
+      action={() => alert('Cancelar...')}
+    />,
+    <TodoButton 
+      type={'Add'} 
+      label={'Agregar'}
+      action={() => alert('Agregar...')}
+    />
     )
   )
 }
 
-export default TodoAddModal
+export {TodoAddModal}
