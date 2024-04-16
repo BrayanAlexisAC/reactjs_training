@@ -7,7 +7,7 @@ function TodoModal(props) {
   return ReactDOM.createPortal(
     React.createElement(
       'div',
-      {},
+      {className: 'noClass'},
       <div className='todoModalContainer'>
         <div className='todoModalContent'>
           {props.children}

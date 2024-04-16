@@ -9,7 +9,7 @@ function TodoAddModal() {
       className: 'todoAddContentModal'
     },
     <h6 className='todoAddTitleModal'> Escribe tu <br/> nuevo TODO </h6>,
-    <textarea className='todoAddDescriptionModal' type="text" placeholder='Estudiar Amazon Web Servicess'/>,
+    <textarea className='todoAddDescriptionModal' type="text" placeholder='Hacer las compras'/>,
     React.createElement(
      'div',
      {
