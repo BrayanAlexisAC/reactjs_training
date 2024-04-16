@@ -2,7 +2,6 @@
   height: 100vh;
   width: 100vh;
   position: fixed;
-  /* z-index: 1050; */
 }
 
 .todoModalContainer {
@@ -17,7 +16,8 @@
 
 .todoModalContent{
   background-color: white;
-  min-width: 90%;
+  width: 90%;
+  max-width: 400px;
   min-height: 36%;
   align-self: center;
   box-shadow: 0px 5px 50px -8px rgba(96,218,250,1);
