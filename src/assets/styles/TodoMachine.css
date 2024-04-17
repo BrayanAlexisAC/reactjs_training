@@ -1,8 +1,46 @@
-.todoMachineWarapper{
+.todoMachineWrapper{
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 106, 133, 1) 0%, rgba(2, 84, 114, 1) 0%, rgba(0, 61, 93, 1) 93%);
+}
+
+.image-todo-background{
+  width: 100vw;
+  height: 100%;
+  transition: ease all .5s;
+}
+
+@media (max-width: 1000px){
+  .image-todo-background{
+    transform: scale(6);
+  }
+}
+
+@media (min-width: 1000px){
+  .image-todo-background{
+    transform: scale(3.0);
+  }
+}
+
+@media (min-width: 1150px){
+  .image-todo-background{
+    transform: scale(2.0);
+  }
+}
+
+@media (min-width: 1400px){
+  .image-todo-background{
+    transform: scale(1.6);
+  }
+}
+
+@media (min-width: 1600px){
+  .image-todo-background{
+    transform: scale(1.3);
+  }
 }
