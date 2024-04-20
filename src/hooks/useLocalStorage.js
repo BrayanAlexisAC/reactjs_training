@@ -3,7 +3,7 @@ import React from "react";
 export function useLocalStorage(itemName, defaultValue, useJSON) {
   const [item, setItem] = React.useState(defaultValue);
   const [isLoading, setIsLoading] = React.useState(true)
-  const {hasError, setHasError} = React.useState(false)
+  const [hasError, setHasError] = React.useState(false)
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -18,8 +18,8 @@ export function useLocalStorage(itemName, defaultValue, useJSON) {
         setItem(parseItem)
         setIsLoading(false)
       } catch (error) {
-        setHasError(true)
         console.error(error)
+        setHasError(true)
         setIsLoading(false)
       }
     }, 2000)
