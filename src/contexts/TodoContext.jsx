@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Modal } from "bootstrap";
 import { useLocalStorage } from '../hooks/useLocalStorage';
+import { toast } from 'sonner';
 
 const TodoContext = React.createContext()
 
@@ -43,13 +44,17 @@ function TodoProvider({children}) {
   }
 
   const addTodos = (description) => {
-    let newTodos = [...data.item]
-    newTodos.push({
-      text: description,
-      completed: false
-    })
-    data.updateItem(newTodos)
-    setOpenTodoModal(!openTodoModal)
+    if (description.length > 0) {
+      let newTodos = [...data.item]
+      newTodos.push({
+        text: description,
+        completed: false
+      })
+      data.updateItem(newTodos)
+      setOpenTodoModal(!openTodoModal)
+    } else {
+      toast.error("No puedes agregar una tarea vacia");
+    }
   }
 
   const cahngeStateTodoModal = () => {
