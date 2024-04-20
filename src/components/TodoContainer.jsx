@@ -10,6 +10,7 @@ import { LoadingIcon } from "./icons/LoadingIcon";
 import { TodoContext } from "../contexts/TodoContext";
 import { TodoModal } from "./common/TodoModal";
 import { TodoAddModal } from "./TodoAddModal";
+import { Toaster} from "sonner";
 
 function TodoContainer() {
   const {
@@ -22,6 +23,7 @@ function TodoContainer() {
     {className : 'todoContainer'},
     <React.Fragment>
       <TodoMessage />
+      <Toaster position="top-center" richColors />
       <TodoCounter />
       <TodoSearch />
       <TodoList>
