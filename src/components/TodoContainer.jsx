@@ -10,14 +10,17 @@ import { LoadingIcon } from "./icons/LoadingIcon";
 import { TodoContext } from "../contexts/TodoContext";
 import { TodoModal } from "./common/TodoModal";
 import { TodoAddModal } from "./TodoAddModal";
-import { Toaster} from "sonner";
+import { Toaster, toast } from "sonner";
+import { TodoEmpty} from "./common/TodoEmpty";
 
 function TodoContainer() {
   const {
+    todoElements,
     localStorageStatus,
     filterTodos,
     todoModal
   } = React.useContext(TodoContext)
+  localStorageStatus.hasError && toast.error('No es posibl recuperar tu lista de actividades')
   return React.createElement(
     'div',
     {className : 'todoContainer'},
@@ -28,13 +31,12 @@ function TodoContainer() {
       <TodoSearch />
       <TodoList>
         {localStorageStatus.isLoading && <LoadingIcon/>}
-        {/* show error message like a notification  */}
-        {localStorageStatus.hasError && 'Ocurrio un error mientras cargaban los datos'}
-        { 
+        {!localStorageStatus.isLoading && todoElements.length == 0 && <TodoEmpty message={'Lista de tareas vacia'} />}
+        {
           filterTodos.map(((todo) => 
-          <TodoItem key={todo.text} todo={todo} />
-        ))
-      }
+            <TodoItem key={todo.text} todo={todo} />
+          ))
+        }
       </TodoList>
       <TodoCreateButton 
         type={"+"} 
