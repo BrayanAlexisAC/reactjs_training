@@ -9,8 +9,10 @@ function TodoModal(props) {
       'div',
       {className: 'noClass'},
       <div className='todoModalContainer'>
-        <div className='todoModalContent'>
-          {props.children}
+        <div className='todoModalContentWrapper'>
+          <div className='todoModalContent'>
+            {props.children}
+          </div>
         </div>
       </div>,
       <div class="modal-backdrop fade show"></div>

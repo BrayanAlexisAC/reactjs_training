@@ -2,10 +2,12 @@
   padding-top: 12px;
   padding-bottom: 12px;
   padding-inline: 20px;
-  border-width: 2px;
-  font-size: 18px;
-  text-align: center;
+  border: 0px;
+  font-size: 22px;
   margin-bottom: 36px;
+  width: 84%;
+  height: 60px;
+  border-radius: 12px;
 }
 
 .todoSearch:focus{
