@@ -19,7 +19,7 @@
 .todoModalContentWrapper {
   width: 100%;
   max-width: 460px;
-  min-height: 65%;
+  height: 790px;
   border-radius: 40px;
   align-content: end;
 }
@@ -28,7 +28,6 @@
   background-color: white;
   width: 100%;
   max-width: 460px;
-  min-height: 32%;
   align-self: center;
   box-shadow: 0px 5px 50px -8px rgba(96,218,250,1);
   border-radius: 40px;

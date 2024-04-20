@@ -23,11 +23,13 @@
   text-align: center;
   align-content: center;
   line-height: 25px;
+  margin-bottom: 16px;
 }
 
 .todoAddButtonsModal {
   display: flex;
   justify-content: space-evenly;
+  padding-bottom: 16px;
 }
 
 .todoAddButtonsModal 
