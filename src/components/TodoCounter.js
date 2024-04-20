@@ -8,10 +8,19 @@ function TodoCounter() {
     todoCompleted,
     todoElements
   } = React.useContext(TodoContext)
-  return (
-    <h1 className="todoCounter">
-      Has completado <br/> <b>{todoCompleted}</b> de <b>{todoElements.length}</b> TODOs
-    </h1>
+  return React.createElement(
+    'div',
+    {className: 'todoCounterContent'},
+    React.createElement(
+      'h1',
+      {className: 'todoTitleCounter'},
+      'Pendientes',
+    ),
+    React.createElement(
+      'p',
+      {className: 'todoCounter'},
+      <>Has Completado <b>{todoCompleted}</b> de <b>{todoElements.length}</b> Tareas</>
+    )
   );
 }
 

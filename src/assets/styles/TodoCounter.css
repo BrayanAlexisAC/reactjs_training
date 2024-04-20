@@ -1,7 +1,10 @@
-.todoCounter {
-  font-family: 'Montserrat';
-  font-weight: normal;
-  font-size: 24px;
-  margin-top: 66px;
+.todoTitleCounter {
+  font-family: 'Montserrat', san;
+  font-weight: bold;
+  font-size: 32px;
+  margin-top: 38px;
   margin-bottom: 32px;
+}
+.todoCounter {
+
 }
