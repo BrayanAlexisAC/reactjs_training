@@ -1,0 +1,11 @@
+.icon-search {
+  position: absolute;
+  font-size: 38px;
+  margin-top: 5px;
+  right: 24px;
+  fill: gray
+}
+
+.icon-search-focus{
+  fill: #60DAFA;
+}
