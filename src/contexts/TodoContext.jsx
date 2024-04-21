@@ -46,12 +46,21 @@ function TodoProvider({children}) {
   const addTodos = (description) => {
     if (description.length > 0) {
       let newTodos = [...data.item]
-      newTodos.push({
-        text: description,
-        completed: false
+      let todoExist = newTodos.filter((todo) =>{
+        let lowerDescription = description.toLowerCase().replace(' ','')
+        let lowerTextTodos = todo.text.toLowerCase().replace(' ','');
+        return lowerTextTodos.includes(lowerDescription)
       })
-      data.updateItem(newTodos)
-      setOpenTodoModal(!openTodoModal)
+      if (todoExist.length === 0) {
+        newTodos.push({
+          text: description,
+          completed: false
+        })
+        data.updateItem(newTodos)
+        setOpenTodoModal(!openTodoModal)
+      } else {
+        toast.error('No es posible agrar una tarea repetida')
+      }
     } else {
       toast.error("No puedes agregar una tarea vacia");
     }
