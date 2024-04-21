@@ -6,7 +6,6 @@ svg{
 
 .icon-loading{ 
   width: 20%;
-  height: 100%;
   color: aqua;
   animation: spin 2.7s linear infinite;
 }

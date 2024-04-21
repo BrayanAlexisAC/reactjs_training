@@ -3,7 +3,7 @@
   background-color: white;
   width: 88%;
   max-width: 92%;
-  height: 80px;
+  min-height: 80px;
   padding-left: 16px;
   justify-content: space-between;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
