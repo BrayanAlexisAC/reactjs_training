@@ -1,4 +1,6 @@
 .todoContainer {
+  min-height: 0vh;
+  transition: min-height 1s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,4 +13,12 @@
   padding-bottom: 36px;
   border-radius: 40px;
   box-shadow: -1px 1px 11px 22px #036e92;
+}
+
+@media (max-width: 550px){
+  .todoContainer {
+    justify-content: initial;
+    min-height: 90vh;
+    transition: min-height 1s ease;
+  }
 }

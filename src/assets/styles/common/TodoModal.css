@@ -19,7 +19,8 @@
 .todoModalContentWrapper {
   width: 100%;
   max-width: 460px;
-  height: 760px;
+  min-height: 61vh;
+  transition: min-height 1.25s ease;
   border-radius: 40px;
   align-content: end;
 }
@@ -31,7 +32,14 @@
   align-self: center;
   box-shadow: 0px 5px 50px -8px rgba(96,218,250,1);
   border-radius: 40px;
-  animation: todoModalShow 0.5s ease;
+  animation: todoModalShow 0.5s ease-in;
+}
+
+@media (max-width: 550px){
+  .todoModalContentWrapper {
+    min-height: 90vh;
+    transition: min-height 1.25s ease;
+  }
 }
 
 @keyframes todoModalShow {
