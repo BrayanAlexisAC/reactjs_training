@@ -41,6 +41,7 @@ function TodoProvider({children}) {
     let index = newTodos.findIndex((element) => element.text === key)
     newTodos.splice(index, 1) // delete elements from parameter 1 to prameter 2
     data.updateItem(newTodos)
+    toast.info('Tarea Eliminada')
   }
 
   const addTodos = (description) => {
@@ -58,11 +59,12 @@ function TodoProvider({children}) {
         })
         data.updateItem(newTodos)
         setOpenTodoModal(!openTodoModal)
+        toast.success('Tarea Agregada')
       } else {
-        toast.error('No es posible agrar una tarea repetida')
+        toast.error('No es posible agregar una tarea repetida')
       }
     } else {
-      toast.error("No puedes agregar una tarea vacia");
+      toast.error("No puedes agregar una tarea con descripcion vacia");
     }
   }
 
