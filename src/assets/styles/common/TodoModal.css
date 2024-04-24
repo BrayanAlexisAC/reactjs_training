@@ -19,7 +19,7 @@
 .todoModalContentWrapper {
   width: 100%;
   max-width: 460px;
-  min-height: 61vh;
+  min-height: 760px;
   transition: min-height 1.25s ease;
   border-radius: 40px;
   align-content: end;
