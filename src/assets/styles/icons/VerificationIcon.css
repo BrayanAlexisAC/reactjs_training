@@ -1,12 +1,14 @@
 .icon-verification {
   cursor: pointer;
   position: relative;
-  top: 20px;
   width: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .icon-verification 
-.icon-check:hover {
+.icon-check
+svg:hover {
   fill: #4caf50;
 }
 

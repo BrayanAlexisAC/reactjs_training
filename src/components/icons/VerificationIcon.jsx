@@ -2,6 +2,7 @@ import React from 'react'
 import { TodoIcons } from './TodoIcons'
 
 function VerificationIcon({completed, onComplete}) {
+  console.log(completed.toString())
   return (
     <TodoIcons 
       type={"verification"}
