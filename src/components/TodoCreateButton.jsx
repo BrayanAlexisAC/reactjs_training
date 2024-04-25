@@ -1,6 +1,7 @@
 import React from 'react';
 import '../assets/styles/TodoCreateButton.css'
 import { TodoContext } from '../contexts/TodoContext';
+import { AddIcon } from './icons/AddIcon';
 
 function TodoCreateButton({ type }) {
   const {
@@ -13,7 +14,7 @@ function TodoCreateButton({ type }) {
       className: 'create-button ' + (todoModal.open && 'create-button-active'),
       onClick: cahngeStateTodoModal
     },
-    type
+    <AddIcon color={'white'}/>
   )
 }
 
