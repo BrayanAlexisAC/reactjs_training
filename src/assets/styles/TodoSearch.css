@@ -11,6 +11,7 @@
   width: 84%;
   height: 60px;
   border-radius: 12px;
+  margin-bottom: 4px;
 }
 
 .todoSearch:focus {
