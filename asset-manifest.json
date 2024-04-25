@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/reactjs_training/static/css/main.6ba46446.css",
-    "main.js": "/reactjs_training/static/js/main.710aaeeb.js",
+    "main.css": "/reactjs_training/static/css/main.64593b89.css",
+    "main.js": "/reactjs_training/static/js/main.a986dd35.js",
     "static/js/453.8493f58d.chunk.js": "/reactjs_training/static/js/453.8493f58d.chunk.js",
     "static/media/ReactToolKit_Banner-1200x500.webp": "/reactjs_training/static/media/ReactToolKit_Banner-1200x500.978edb470b5661a539fc.webp",
     "index.html": "/reactjs_training/index.html",
     "static/media/check.svg": "/reactjs_training/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
-    "main.6ba46446.css.map": "/reactjs_training/static/css/main.6ba46446.css.map",
-    "main.710aaeeb.js.map": "/reactjs_training/static/js/main.710aaeeb.js.map",
+    "main.64593b89.css.map": "/reactjs_training/static/css/main.64593b89.css.map",
+    "main.a986dd35.js.map": "/reactjs_training/static/js/main.a986dd35.js.map",
     "453.8493f58d.chunk.js.map": "/reactjs_training/static/js/453.8493f58d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ba46446.css",
-    "static/js/main.710aaeeb.js"
+    "static/css/main.64593b89.css",
+    "static/js/main.a986dd35.js"
   ]
 }
