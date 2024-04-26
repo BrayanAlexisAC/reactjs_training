@@ -1,11 +1,20 @@
+# Todo Machine or Pending tasks
+This application consist in we can create, delete and search pendding task to do. I used only React.js with context, portals, hooks and libraries like sonner and a little bootstrap.
+This application doesn't end here, I'm planning to migrate with typescript and vite. Of course in own branches
+
 # Figma Design
-[Figma](https://www.figma.com/file/3aZkIjXMEzBDACmWxqUVes/TODO-Machine-Mockup?type=design&node-id=0-1&mode=design)
+[Based Design](https://www.figma.com/file/3aZkIjXMEzBDACmWxqUVes/TODO-Machine-Mockup?type=design&node-id=0-1&mode=design)
 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+in the project directory, you can deploy in gthub pages
+
+**Warning:** you need to change the homepage in package.json
+
+###  `npm run depoy`
 
 In the project directory, you can run:
 
